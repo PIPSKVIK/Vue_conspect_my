@@ -1,32 +1,40 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav class="nav">
+      <router-link class="nav-link" :to="{ name: 'Home' }" exact>Home</router-link>
+      <router-link class="nav-link" :to="{ name: 'DeepVue' }">Deep Vue</router-link>
+      <router-link class="nav-link" :to="{ name: 'ModalPage' }">Modal Page</router-link>
+      <router-link class="nav-link" :to="{ name: 'Transition' }">Transition</router-link>
+      <router-link class="nav-link" :to="{ name: 'Form' }">Form</router-link>
+      <router-link class="nav-link" :to="{ name: 'Toast' }">Toast</router-link>
+      <router-link class="nav-link" :to="{ name: 'Reusability' }">Reusability</router-link>
+      <router-link class="nav-link" :to="{ name: 'Store' }">Store</router-link>
+    </nav>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+.nav {
+  width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(45deg, #0a0e4d, rgba(3, 4, 21, .5));
+  padding: 10px 0;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px 0 10px;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.router-link-active {
+  color: red;
 }
 </style>
